@@ -23,4 +23,46 @@ public class FindLoopTest {
         int expected = -1;
         assertEquals(expected, result);
     }
+
+    @Test
+    public void whenArrayHasLength5Then0() {
+        int[] data = new int[] {5, 10, 3};
+        int el = 5;
+        int result = FindLoop.indexOf(data, el);
+        int expected = 0;
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void whenFind3() {
+        int[] data = new int[] {5, 2, 10, 2, 4};
+        int el = 2;
+        int start = 2;
+        int finish = 4;
+        int result = FindLoop.indexOf(data, el, start, finish);
+        int expected = 3;
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void whenFind7() {
+        int[] data = new int[] {5, 2, 10, 2, 4, 19, 110, 400, 7};
+        int el = 400;
+        int start = 3;
+        int finish = 7;
+        int result = FindLoop.indexOf(data, el, start, finish);
+        int expected = 7;
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void whenNotFind() {
+        int[] data = new int[] {5, 2, 10, 2, 4, 19, 110, 400, 7};
+        int el = 400;
+        int start = 3;
+        int finish = 6;
+        int result = FindLoop.indexOf(data, el, start, finish);
+        int expected = -1;
+        assertEquals(expected, result);
+    }
 }
